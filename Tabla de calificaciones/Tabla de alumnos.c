@@ -12,14 +12,14 @@ int main()
 
 
     FILE *ar;
-    ar = fopen("arc8.txt", "a");
+    ar = fopen("Tabla.txt", "a");
 
 
         printf("\nIngresa Nombre Alumno: ");
-        scanf("%s", &nAlumno);
+        gets(nAlumno);
 
         printf("\nIngresa Nombre Materia: ");
-        scanf("%s", &materia);
+        gets(materia);
 
         printf("\nIngresa Valor Parcial 1: ");
         scanf("%f", &p1);
@@ -32,11 +32,14 @@ int main()
 
         promedio = (p1 + p2 + p3) / 3.0;
         printf("|MATERIA|\t|ALUMNO|\t|P1|\t|P2|\t|P3|\t|PROMEDIO|");
-        printf("\n%s\t%s\t%0.2f\t%0.2f\t%0.2f\t%0.2f", materia, nAlumno, p1, p2, p3, promedio);
+        printf("\n|%s|\t|%s|\t|%0.2f|\t|%0.2f|\t|%0.2f|\t|%0.2f|", materia, nAlumno, p1, p2, p3, promedio);
 
-        fprintf(ar, "\n%s\t%s\t%0.2f\t%0.2f\t%0.2f\t%0.2f", materia, nAlumno, p1, p2, p3, promedio);
+        fprintf(ar, "\n|MATERIA|\t|ALUMNO|\t|P1|\t|P2|\t|P3|\t|PROMEDIO|");
+        fprintf(ar, "\n------------------------------------------------------");
+        fprintf(ar, "\n|%s|\t|%s|\t||%0.2f|\t|%0.2f|\t|%0.2f|\t|%0.2f|", materia, nAlumno, p1, p2, p3, promedio);
+        fprintf(ar, "\n------------------------------------------------------");
 
-        printf("\n\n¿Quieres ingresar información para otro estudiante? Si-1 No-0 : ");
+        printf("\n\nÂ¿Quieres agregar la informacion de otro alumno? Si-1 No-2:");
         scanf("%d");
 
 
