@@ -12,9 +12,21 @@ int main() {
         return 0;
     }
 
+
     printf("Tiene fiebre? (1 para si, 0 para no): ");
     scanf("%d", &respuesta);
+
+
+
     if (respuesta == 1) {
+        printf("Es alta o baja? (1 para Alta, 0 para Baja): ");
+        scanf("%d", &respuesta);
+
+        if (respuesta == 1) {
+            printf("Vaya al hospital mas cercano.\n");
+            return 0;
+        } else {
+            if (respuesta == 0) {
         printf("Ha estado en contacto con alguien que tiene COVID-19? (1 para si, 0 para no): ");
         scanf("%d", &respuesta);
 
@@ -24,6 +36,8 @@ int main() {
         } else {
             printf("Tome paracetamol y descanse.\n");
             return 0;
+        }
+    }
         }
     }
 
